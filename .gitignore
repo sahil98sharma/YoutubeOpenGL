@@ -53,3 +53,4 @@ Thumbs.db
 *.vcxproj.user
 *.VC.db
 .agent/
+.agents/
