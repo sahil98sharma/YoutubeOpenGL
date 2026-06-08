@@ -71,12 +71,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -84,6 +92,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -99,10 +109,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -111,6 +124,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,10 +141,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
