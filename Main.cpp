@@ -35,6 +35,12 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
 "}\n\0";
 
+void processInput(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) 
+		glfwSetWindowShouldClose(window, true);
+}
+
 int main() 
 {
 	//initialize GLFW library
@@ -143,9 +149,12 @@ int main()
 	//swap the back buffer with the front buffer to display the new color
 	glfwSwapBuffers(window);
 
-	//Main While Loop
+	//render loop - keep running until the user closes the window
 	while(!glfwWindowShouldClose(window)) 
 	{
+		//check for use input (ESC Key) to close the window
+		processInput(window);
+
 		glClearColor(0.02f, 0.13f, 0.17f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shaderProgram);
