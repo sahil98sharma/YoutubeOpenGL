@@ -22,33 +22,33 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{50d94db0-ba79-4df5-ae7c-08e4da8f1428}</ProjectGuid>
-    <RootNamespace>YoutubeOpenGL</RootNamespace>
+    <RootNamespace>LearnOpenGL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,20 +71,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\lib;D:\Game Dev\Graphics Programming\Projects\LearnOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;D:\Game Dev\Graphics Programming\Projects\YoutubeOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\lib;D:\Game Dev\Graphics Programming\Projects\LearnOpenGL\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <IncludePath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\GameDev\Projects\OpenGL\YoutubeOpenGL\Libraries\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <IncludePath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\GameDev\Projects\OpenGL\LearnOpenGL\Libraries\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
