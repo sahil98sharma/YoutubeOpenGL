@@ -7,7 +7,6 @@
 * Using source code provided on learnopengl.com, we can write a simple vertex shader and a simple fragment shader to display a color on the screen.
 */
 
-
 /*
 The main purpose of the vertex shader is to transform 3D coordinates into different 3D coordinates 
 and the vertex shader allows us to do some basic processing on the vertex attributes.
@@ -35,14 +34,20 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
 "}\n\0";
 
-void processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) 
-		glfwSetWindowShouldClose(window, true);
-}
+
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(GLFWwindow* window);
+
+// settings
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
 
 int main() 
 {
+	// glfw: initialize and configure
+	// ------------------------------
+
 	//initialize GLFW library
 	glfwInit();
 
@@ -53,20 +58,12 @@ int main()
 	//tell GLFW we want to use the core profile - only modern functions
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); 
 
-	//vertices of the triangle we want to draw
-	//equilateral triangle with side length of 1, centered at the origin
-	GLfloat vertices[] = 
-	{
-		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,	//left
-		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,		//right
-		0.0f, 0.5f * float(sqrt(3))* 2/3, 0.0f		//top
-	};
-
-
+	
+	// glfw window creation
+	// --------------------
+	
 	//Create a windowed mode window and its OpenGL context
-	GLFWwindow* window = glfwCreateWindow(800, 800, "OpenGL Window", nullptr, nullptr);
-
-
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", nullptr, nullptr);
 	if(window == nullptr) 
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
@@ -77,12 +74,30 @@ int main()
 	//introduce window's context to the current thread
 	glfwMakeContextCurrent(window);
 
+	//register the callback function to adjust the viewport size when the window is resized
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
 	// Load OpenGL function pointers using GLAD
 	gladLoadGL();
 
-	//set the viewport size
-	glViewport(0, 0, 800, 800);
+	// GLAD manages function pointers for OpenGL, so ensure that GLAD is initialized before calling any OpenGL function
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return -1;
+	}
 
+	//set the viewport size
+	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+
+	//vertices of the triangle we want to draw
+	//equilateral triangle with side length of 1, centered at the origin
+	GLfloat vertices[] = 
+	{
+		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,	//left
+		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,		//right
+		0.0f, 0.5f * float(sqrt(3))* 2/3, 0.0f		//top
+	};
 
 	//setup and compile the vertex shader
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -181,4 +196,27 @@ int main()
 	glfwTerminate();
 
 	return 0;
+}
+
+/// <summary>
+/// Process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+/// </summary>
+/// <param name="window"></param>
+void processInput(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, true);
+}
+
+/// <summary>
+/// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+/// </summary>
+/// <param name="window"></param>
+/// <param name="width"></param>
+/// <param name="height"></param>
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	// make sure the viewport matches the new window dimensions; note that width and 
+	// height will be significantly larger than specified on retina displays.
+	glViewport(0, 0, width, height);
 }
